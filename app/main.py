@@ -1,6 +1,6 @@
 import json
 import xml.etree.ElementTree as xml_ET
-from enum import StrEnum, auto
+from enum import Enum, auto
 from dataclasses import dataclass, asdict
 from abc import ABC, abstractmethod
 
@@ -105,18 +105,18 @@ class Serializer:
 # -------------|
 
 
-class ConsoleCommands(StrEnum):
+class ConsoleCommands(str, Enum):
     display = auto()
     print = auto()
     serialize = auto()
 
 
-class BaseConsoleCommandsType(StrEnum):
+class BaseConsoleCommandsType(str, Enum):
     console = auto()
     reverse = auto()
 
 
-class SerializeCommands(StrEnum):
+class SerializeCommands(str, Enum):
     json = auto()
     xml = auto()
 
