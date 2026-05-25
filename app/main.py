@@ -148,7 +148,8 @@ def main(book: Book, commands: list[tuple[str, str]]) -> None:
         handler_map, handler_class = COMMAND_MAP[cmd]
         handler = handler_class(handler_map[method_type])
         handler_class_method = getattr(handler, cmd)
-        return handler_class_method(book)
+        if handler_class_method:
+            return handler_class_method(book)
 
 
 if __name__ == "__main__":
