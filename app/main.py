@@ -122,24 +122,24 @@ class SerializeCommands(str, Enum):
 
 
 DISPLAY_MAP: dict[str, BaseDisplay] = {
-    BaseConsoleCommandsType.console: ConsoleDisplay(),
-    BaseConsoleCommandsType.reverse: ReverseDisplay(),
+    BaseConsoleCommandsType.console.name: ConsoleDisplay(),
+    BaseConsoleCommandsType.reverse.name: ReverseDisplay(),
 }
 
 PRINT_MAP: dict[str, BasePrint] = {
-    BaseConsoleCommandsType.console: ConsolePrint(),
-    BaseConsoleCommandsType.reverse: ReversePrint(),
+    BaseConsoleCommandsType.console.name: ConsolePrint(),
+    BaseConsoleCommandsType.reverse.name: ReversePrint(),
 }
 
 SERIALIZE_MAP: dict[str, BaseSerializer] = {
-    SerializeCommands.json: JsonSerializer(),
-    SerializeCommands.xml: XmlSerializer(),
+    SerializeCommands.json.name: JsonSerializer(),
+    SerializeCommands.xml.name: XmlSerializer(),
 }
 
 COMMAND_MAP = {
-    ConsoleCommands.display: (DISPLAY_MAP, Viewer),
-    ConsoleCommands.print: (PRINT_MAP, Printer),
-    ConsoleCommands.serialize: (SERIALIZE_MAP, Serializer),
+    ConsoleCommands.display.name: (DISPLAY_MAP, Viewer),
+    ConsoleCommands.print.name: (PRINT_MAP, Printer),
+    ConsoleCommands.serialize.name: (SERIALIZE_MAP, Serializer),
 }
 
 
